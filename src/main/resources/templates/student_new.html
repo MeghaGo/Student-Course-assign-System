@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Create New Student</title>
+
+<!--    should import in html file for modal-->
     <script
             src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -12,6 +14,7 @@
     <script type="text/javascript" th:src="@{/js/student.js}"></script>
     <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+
 </head>
 <body>
 <div align="center">
@@ -65,6 +68,63 @@
         <br>
         <table class="table table-hover" id="studentTable">
         </table>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Student</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form action="#" th:action="@{#}" method="post" id ="saveStudent-edit">
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label block-id" >Id</label>
+                            <td>
+                                <input type="number" class="form-control" disabled  id="id_student-edit"/>
+                            </td>
+                        </tr>
+                    </div>
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label" >Student Id</label>
+                            <td>
+                                <input type="number" name="studentId" class="form-control" id="studentId-edit" placeholder="Student Id"/>
+                            </td>
+                        </tr>
+                    </div>
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label" >Student Name</label>
+                            <td><input type="text" name="studentName" class="form-control" id= "studentName-edit" placeholder="Student Name" /></td>
+                        </tr>
+                    </div>
+
+
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label" >Marks</label>
+                            <td><input type="number" name="marks" class="form-control" id="marks-edit" placeholder="Marks" /></td>
+                        </tr>
+                    </div>
+                    <br>
+                    <tr>
+                        <td colspan="2"><button type="submit" class="btn btn-info"  onclick="alertSave(), saveData()">Save</button> </td>
+                    </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
 </div>
 </body>

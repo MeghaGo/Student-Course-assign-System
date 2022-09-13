@@ -74,6 +74,7 @@
 
         function editCourse(instance) {
         let id = $(instance).attr('data-id');
+        $(".exampleModal").show();
         		$.ajax({
         			type :"POST",
         			url : baseUrl + "edit",
